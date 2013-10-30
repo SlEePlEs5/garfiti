@@ -1,0 +1,107 @@
+/* Put your CSS here */
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-family: source-sans-pro, helvetica, arial, sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+.topcoat-navigation-bar {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+}
+
+.topcoat-navigation-bar__title {
+    font-size: 24px;
+}
+
+.garflist_scroller {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 68px;
+    bottom: 64px;
+    left: 0px;
+    right: 0px;
+}
+
+.topcoat-list__container {
+    border-bottom: none;
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.garflist_item {
+    padding: 12px 24px 12px 24px;
+    position: relative;
+}
+
+.garflist_item:active {
+    background-color: #404141;
+}
+
+.garflist_title {
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 4px;
+}
+
+.garflist_author {
+    color: #888;
+    margin: 0;
+}
+
+.garflist_status-icon {
+    position: absolute;
+    top: 8px;
+    right: 24px;
+    width: 28px;
+    height: 28px;
+}
+
+.garflist_timestamp {
+    color: #888;
+    position: absolute;
+    bottom: 12px;
+    right: 24px;
+}
+
+.garflist_bottom-padding {
+    width: auto;
+    height: 32px;
+}
+
+.fade-footer {
+    position: absolute;
+    z-index: 99;
+    bottom: 0px;
+    width: 100%;
+    height: 96px;
+    background: url(../images/fade-bg.png);
+}
+
+.garflist_new-garf-button {
+    position: relative;
+    bottom: -40px;
+    width: 48px;
+    height: 48px;
+}
+
+.garflist_new-garf-icon {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    top: 5px;
+    left: 5px;
+}
