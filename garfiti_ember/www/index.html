@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+<!-- For Debugging Purposes, to avoid much headache -->
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+
+<title>Garfiti</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts/fontdefs.css">
+    <link rel="stylesheet" href="css/topcoat-mobile-dark.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<script type="text/x-handlebars">
+    {{outlet}}
+</script>
+
+<script type="text/x-handlebars" id="index">
+    <div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item center full">
+            <h1 class="topcoat-navigation-bar__title">Garfiti</h1>
+        </div>
+    </div>
+    <div class="topcoat-list__container garflist_scroller scrollable">
+        <ul class="topcoat-list">
+            {{#each}}
+            
+                {{partial 'index/listitem'}}
+                
+            {{/each}}
+        </ul>
+        <div class="garflist_bottom-padding"></div>
+    </div>
+    <div class="fade-footer center">
+        <button class="topcoat-icon-button garflist_new-garf-button center">
+            <object type="image/svg+xml" data="icons/plus.svg" class="topcoat-icon garflist_new-garf-icon"></object>
+        </button>
+    </div>
+</script>
+
+<script type="text/x-handlebars" id="index/_listitem">
+    <li class="topcoat-list__item garflist_item">
+        <a href="#">
+            <p class="garflist_title">{{title}}</p>
+            <p class="garflist_author">{{author.name}}</p>
+            {{#if isNew}}
+            <object type="image/svg+xml" data="icons/starburst.svg" class="garflist_status-icon"></object>
+            {{else}}{{#if isSolved}}
+            <object type="image/svg+xml" data="icons/checkmark.svg" class="garflist_status-icon"></object>
+            {{/if}}{{/if}}
+            <span class="garflist_timestamp">{{format-date date}}</span>
+        </a>
+    </li>
+</script>
+    
+<script src="js/libs/jquery-1.9.1.js"></script> 
+<script src="js/libs/handlebars-1.0.0.js"></script>
+<script src="js/libs/ember-1.1.2.js"></script>
+<script src="js/libs/fastclick.js"></script>
+<script src="js/libs/moment.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
